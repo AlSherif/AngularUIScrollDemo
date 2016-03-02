@@ -1,0 +1,54 @@
+<p data-ng-init = init()>view 1.</p>
+<h3>Angular ui-scroll sample with {{list.length}} entries</h3>
+
+
+<div id = "listViewPort" ng-hide="false" class = "forceScrollBar scrollingList" Style = "height: 630px;" ui-scroll-viewport>
+    <a
+            ui-scroll="user in viewSource"
+            buffer-size = "9"
+            adapter = "uiScrollAdapter"
+            class="list-group-item animated entry {{user.subscribed?'bluegray':''}}"
+            data-ng-href=""
+
+            >
+        <div class="row language-entry-row" >
+
+            <div style="width: 10px; padding: 0; float: left; margin-bottom: -16px;">
+                <div class="translation-status-bar">
+                                        <span class="green"
+                                              data-ng-if="user.subscribed"></span>
+                </div>
+            </div>
+
+            <div class = " elipsis"
+                 ng-class="user.subscribed? 'lead col-xs-2' : 'col-xs-4'">
+                <input type="checkbox" class = "vAlign"
+                       ng-model = "user.subscribed" ng-click="$event.stopPropagation();" ng-change="alert('user : '+user.name+ ' selected : '+user.selected)">
+                                    <span class="list-group-item-text" style = "margin-left:10px;"
+                                          data-ng-bind="::user.name" title = "{{user.name}}">
+                                    </span>
+            </div>
+            <div ng-if="user.subscribed"
+                 class="list-group-item-text col-xs-2 elipsis text-grey"
+                 data-ng-bind="user.subscriptionDate"
+                 title = "{{user.subscriptionDate}}">
+            </div>
+            <div class="list-group-item-text elipsis"
+                 ng-class="user.subscribed? 'lead col-xs-4' : 'col-xs-4'"
+                 data-ng-bind="user.firstName"
+                 title = "{{user.firstName}}">
+            </div>
+            <div class="list-group-item-text elipsis col-xs-3"
+                 data-ng-bind="user.address"
+                 title = "{{user.address}}">
+            </div>
+            <div class="list-group-item-text  col-xs-1 " >
+                                    <span ng-show="user.subscribed"
+                                          class="btn-sm btn">
+                                            <i class="glyphicon glyphicon-user"></i>
+                                        </span>
+            </div>
+        </div>
+    </a>
+</div>
+

@@ -1,0 +1,62 @@
+/* app css stylesheet */
+
+/**
+force scrollbar
+**/
+.forceScrollBar::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+.forceScrollBar::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.scrollingList .list-group-item{
+  border-left: none;
+  border-right: none;
+}
+
+.scrollingList{
+  border: 1px solid #eaeaea;
+}
+
+.bluegray
+{
+  background: #EAF5FB;
+}
+
+.language-entry-row > div {
+  line-height: 32px;
+}
+
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
