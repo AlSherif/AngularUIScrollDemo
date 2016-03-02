@@ -24,7 +24,11 @@ force scrollbar
 
 .bluegray
 {
-  background: #EAF5FB;
+  background: #EAF5FB!important;
+}
+
+.text-grey {
+  color: #999!Important;
 }
 
 .language-entry-row > div {
